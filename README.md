@@ -3,21 +3,22 @@
 
 This is a JWT Security filter which can be use to avoid second login page for AppManager users for j2ee secured web applications.
 Here we are going to show you how to apply this filter to an application with an example.
-
+```
 Prerequisites 
+```
 
-JWTSecurityFilter source or jar file
+1. JWTSecurityFilter source or jar file
 Download from - https://github.com/visithamanujaya/JWTSecurityFilter/tree/master
 
-Sample web application 
+2. Sample web application 
 Download from - https://github.com/visithamanujaya/Sample_WebApp_For_JWT_Security_Filter
 
-Install AppManager
+3. Install AppManager
 
-Install Tomcat
-
+4. Install Tomcat
+```
 Configurations
-
+```
 Step – 1	
 
 	Build the web application using maven and deploy it in tomcat.

@@ -56,7 +56,7 @@ A security constraint defined in web.xml
 		</user-data-constraint>
 	 </security-constraint>
 
-How the above should be defined in JWTSecurityConstraints.xml, here you have to consider only about url pattern and the user role.
+How the above should be defined in CustomData.xml, here you have to consider only about url pattern and the user role.
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <JWTSecurityConstraints>
@@ -68,7 +68,7 @@ How the above should be defined in JWTSecurityConstraints.xml, here you have to 
         </authConstraint>
     </SecurityConstraint>
 </JWTSecurityConstraints>
-
+```
 
 
 Step – 5
@@ -78,6 +78,7 @@ Step – 5
 Step – 6
 
 Define Filter and Filter-Mapping in web.xml and save the file.
+```
 <filter>
     <filter-name>f1</filter-name>
     <filter-class>org.wso2.JWTSecurity.servlets.JWTSecurityFilter</filter-class>
@@ -86,9 +87,9 @@ Define Filter and Filter-Mapping in web.xml and save the file.
     <filter-name>f1</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-
+```
 E.g Final web.xml should be like this
-
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.4"
          xmlns="http://java.sun.com/xml/ns/j2ee"
@@ -111,9 +112,8 @@ E.g Final web.xml should be like this
     <filter-name>f1</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-
 </web-app>
-        
+  ```      
 Step – 7
 
 	Go to AppManager and create corresponding users and their roles then deploy the app from AppManager.
