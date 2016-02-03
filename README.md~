@@ -56,7 +56,7 @@ A security constraint defined in web.xml
 		</user-data-constraint>
 	 </security-constraint>
 
-How the above should be defined in CustomData.xml, here you have to consider only about url pattern and the user role.
+How the above should be defined in JWTSecurityConstraints.xml, here you have to consider only about url pattern and the user role.
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <JWTSecurityConstraints>
