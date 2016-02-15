@@ -23,45 +23,34 @@ import java.security.Principal;
 import java.util.List;
 
 /**
- *Generic principal to store user details read from the JWT token
+ * Generic principal to store user details read from the JWT token
  */
 public class JWTGenericPrincipal extends GenericPrincipal {
 
     private String username;
     private List<String> roleList;
-    private Principal principal;
 
-    public JWTGenericPrincipal(String name, String password, List<String> roles, Principal userPrincipal) {
-        super(name, password, roles, userPrincipal);
+    public JWTGenericPrincipal(String name, String password, List<String> roles) {
+        super(name, password, roles);
         this.username = name;
         this.roleList = roles;
-        this.principal = userPrincipal;
     }
 
     /**
      * Return the username of the generic principal.
+     *
      * @return string user name
      */
-    public String getUsername(){
+    public String getUsername() {
         return username;
     }
 
     /**
      * Returns the set of roles in the JWT token as a list.
+     *
      * @return List<String>  roles list.
-     *
-     *
-     **/
-    public List<String> getRoleList(){
-        return roleList;
-    }
-
-    /**
-     * Returns the user principal.
-     * @return a user principal.
      */
-    public Principal getPrincipal(){
-
-        return principal;
+    public List<String> getRoleList() {
+        return roleList;
     }
 }
