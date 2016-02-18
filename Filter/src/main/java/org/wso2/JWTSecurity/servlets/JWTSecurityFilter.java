@@ -60,7 +60,7 @@ public class JWTSecurityFilter implements Filter {
     protected String trustStorePath = "";
     protected String trustStorePassword = "";
     protected String alias = "";
-    private SimpleJWTProcessor simpleJWTProcessor;
+    private JWTValidator JWTValidator;
     /**
      * @param filterConfig
      * @throws ServletException This is is the methid which runs once at the start of the program so all the
@@ -74,7 +74,7 @@ public class JWTSecurityFilter implements Filter {
             JWTSecurityConstraints = JWTSecurityConstraintsReader.getCustomData(inStream);
             List<SecurityConstraint> securityConstraintList = JWTSecurityConstraints.getSecurityConstraint();
             userAuthenticator = new UserAuthenticator(securityConstraintList);
-            simpleJWTProcessor = new SimpleJWTProcessor();
+            JWTValidator = new JWTValidator();
         } catch (IOException e) {
             log.log(Level.OFF, XML_FILE_PATH + " is not found", e);
         } catch (JWTSecurityException e) {
@@ -104,19 +104,19 @@ public class JWTSecurityFilter implements Filter {
         if (userAuthenticator.isURISecured(requestedUri)) {
             if (jwtToken != null && jwtToken != "") {
 
-                if (simpleJWTProcessor.isValid(jwtToken, trustStorePath, trustStorePassword, alias)) {
-                    String[] jwtArray = simpleJWTProcessor.jwtPartitions(jwtToken);
+                if (JWTValidator.isValid(jwtToken, trustStorePath, trustStorePassword, alias)) {
+                    String[] jwtArray = JWTValidator.jwtPartitions(jwtToken);
 
                     if (jwtArray.length != 3) {
                         //Format of the JWT header is invalid so we send un-authorized.
                         response.sendError(403);
                         return;
                     }
-                    String payloadString = simpleJWTProcessor.getjwtPayloadDecode(jwtArray);
+                    String payloadString = JWTValidator.getjwtPayloadDecode(jwtArray);
                     JSONObject payLoad = null;
 
                     try {
-                        payLoad = simpleJWTProcessor.jsonObjectConverter(payloadString);
+                        payLoad = JWTValidator.jsonObjectConverter(payloadString);
                     } catch (Exception e) {
                         log.log(Level.SEVERE, "Error while creating JASON object from payloadString", e);
                         response.sendError(422, "Invalid JWT Header");

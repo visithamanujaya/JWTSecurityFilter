@@ -17,13 +17,13 @@
 */
 
 import org.junit.Test;
-import org.wso2.tomcat.authenticator.SimpleJWTProcessor;
+import org.wso2.tomcat.authenticator.JWTValidator;
 
 import javax.xml.bind.DatatypeConverter;
 
 import static org.junit.Assert.*;
 
-public class SimpleJWTProcessorTest {
+public class JWTValidatorTest {
 
     @Test
     public void testIsValid() throws Exception {
@@ -35,7 +35,7 @@ public class SimpleJWTProcessorTest {
 
 
         String jwtToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5rSkdPRVV4TXpaRlFqTTJSRFJCTlRaRlFUQTFRemRCUlRSQ09VRTBOVUkyTTBKR09UYzFSQT09In0=.eyJpc3MiOiJ3c28yLm9yZy9wcm9kdWN0cy9hcHBtIiwiZXhwIjoxNDU1Njg4OTg1ODAwLCJzdWIiOiJhZG1pbkBjYXJib24uc3VwZXIiLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL3JvbGUiOiJJbnRlcm5hbC9UZXN0ZXItMS4xLjEsSW50ZXJuYWwvcHVibGlzaGVyLEludGVybmFsL1RvbWNhdCBUZXN0LXYxLjAuMCxJbnRlcm5hbC9jcmVhdG9yLGFkbWluLEludGVybmFsL3N1YnNjcmliZXIsSW50ZXJuYWwvc3RvcmUtYWRtaW4sSW50ZXJuYWwvZXZlcnlvbmUsSW50ZXJuYWwvSldUU2VjdXJpdHlGaWx0ZXJUZXNzdC12MS4wLjAsSW50ZXJuYWwveHh4LTEuMS4xLEludGVybmFsL0ZpcnN0QXBwLXYxLjAuMCJ9.kA26M9M4XTz9rvArLQcctpIbs/505tiA90gZPShozGHeDkM/yAzxllYwolv2L/gVUeC4kdmnsqUIG0Axyw6BnC+ANESS14kN06ulC2n1923pKfhhr8L8vJpLgyzVrYFb6bCxTk7/4m5Ox9rQVeicRifQyFzqGHy+TZe3bfWTBbA=";
-        SimpleJWTProcessor processor = new SimpleJWTProcessor();
+        JWTValidator processor = new JWTValidator();
         assertTrue(processor.isValid(jwtToken, TRUST_STORE_PATH, TRUST_STORE_PASSWORD, ALIAS));
     }
 }

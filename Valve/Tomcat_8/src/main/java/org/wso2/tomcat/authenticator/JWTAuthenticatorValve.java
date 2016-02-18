@@ -44,7 +44,7 @@ public class JWTAuthenticatorValve extends ValveBase {
     protected String trustStorePath = "";
     protected String trustStorePassword = "";
     protected String alias = "";
-    private SimpleJWTProcessor simpleJWTProcessor = new SimpleJWTProcessor();
+    private JWTValidator JWTValidator = new JWTValidator();
 
     public JWTAuthenticatorValve() {
         super(true);
@@ -58,11 +58,11 @@ public class JWTAuthenticatorValve extends ValveBase {
 
             String jwtToken = request.getHeader(JWT_TOKEN_NAME);
             if (jwtToken != null) {
-                if (simpleJWTProcessor.isValid(jwtToken, trustStorePath, trustStorePassword, alias)) {
-                    String payLoad = simpleJWTProcessor.getjwtPayloadDecode(simpleJWTProcessor.jwtPartitions(
+                if (JWTValidator.isValid(jwtToken, trustStorePath, trustStorePassword, alias)) {
+                    String payLoad = JWTValidator.getjwtPayloadDecode(JWTValidator.jwtPartitions(
                             jwtToken));
                     if (payLoad != null) {
-                        JSONObject payloadObject = simpleJWTProcessor.jsonObjectConverter(payLoad);
+                        JSONObject payloadObject = JWTValidator.jsonObjectConverter(payLoad);
                         List<String> roleList = getRoleList(payloadObject);
                         String userName = (String) payloadObject.get(JWT_TOKEN_SUBJECT);
                         JWTGenericPrincipal jwtGenericPrincipal = new JWTGenericPrincipal(userName, "", roleList);

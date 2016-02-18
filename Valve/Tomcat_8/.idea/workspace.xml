@@ -2,57 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df0e144e-0a3c-46ed-8c27-602380c2f2b6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../IDEA/SampleWebApp/Artifact1.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../IDEA/SampleWebApp/.idea/artifacts/Artifact1_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../IDEA/SampleWebApp/.idea/artifacts/Artifact1_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/ContainerFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/ContentHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/ItemList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/JSONArray.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/JSONAware.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/JSONObject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/JSONParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/JSONStreamAware.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/JSONValue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/JWTAuthenticatorValve.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/JWTGenericPrincipal.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_nimbus_jose_jwt_2_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_jcip_jcip_annotations_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_1_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_7_0_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_8_0_30.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_api_7_0_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_api_8_0_30.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_catalina_7_0_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_catalina_8_0_30.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_coyote_8_0_30.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_el_api_8_0_30.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_jni_8_0_30.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_jsp_api_8_0_30.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_7_0_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_8_0_30.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_servlet_api_7_0_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_servlet_api_8_0_30.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_util_7_0_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_util_8_0_30.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_util_scan_8_0_30.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk16_1_46.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/ParseException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../IDEA/SampleWebApp/.idea/artifacts/SampleWebApp_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../IDEA/SampleWebApp/.idea/artifacts/SampleWebApp_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/SimpleJWTProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/SimpleJWTProcessorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/Yylex.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/Yytoken.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../untitled/.idea/ant.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/findbugs-idea.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../../IDEA/SampleWebApp/Artifact1.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../../IDEA/SampleWebApp/.idea/artifacts/Artifact1_war.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../../IDEA/SampleWebApp/.idea/artifacts/Artifact1_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/parser/ContainerFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/parser/ContentHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/ItemList.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/JSONArray.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/JSONAware.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/JSONObject.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/parser/JSONParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/JSONStreamAware.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/JSONValue.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/authenticator/JWTAuthenticatorValve.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/authenticator/JWTGenericPrincipal.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__com_nimbusds_nimbus_jose_jwt_2_9.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__commons_codec_commons_codec_1_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__junit_junit_4_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__net_jcip_jcip_annotations_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__net_minidev_json_smart_1_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_7_0_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_8_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_api_7_0_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_api_8_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_catalina_7_0_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_catalina_8_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_coyote_8_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_el_api_8_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_jni_8_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_jsp_api_8_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_7_0_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_8_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_servlet_api_7_0_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_servlet_api_8_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_util_7_0_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_util_8_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_apache_tomcat_tomcat_util_scan_8_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk16_1_46.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/parser/ParseException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../../IDEA/SampleWebApp/.idea/artifacts/SampleWebApp_war.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../../IDEA/SampleWebApp/.idea/artifacts/SampleWebApp_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/authenticator/SimpleJWTProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/test/java/SimpleJWTProcessorTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/parser/Yylex.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/src/main/java/org/wso2/tomcat/JSON/parser/Yytoken.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../untitled/.idea/ant.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/findbugs-idea.xml" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_CONFIG_DIR$/options/runner.layout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../IDEA/SampleWebApp/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../IDEA/SampleWebApp/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../../IDEA/SampleWebApp/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_CONFIG_DIR$/options/ui.lnf.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../Authentication/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../../IDEA/SampleWebApp/.idea/vcs.xml" />
     </list>
     <ignored path="Authentication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,15 +80,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SimpleJWTProcessor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/SimpleJWTProcessor.java">
+      <file leaf-file-name="JWTValidator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/JWTValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2595">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1950" max-vertical-offset="2205">
               <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#5876#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,7 +93,7 @@
       <file leaf-file-name="JWTGenericPrincipal.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/JWTGenericPrincipal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+            <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="585">
               <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
               <folding />
             </state>
@@ -105,23 +103,22 @@
       <file leaf-file-name="JWTAuthenticatorValve.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/JWTAuthenticatorValve.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4013158" vertical-offset="0" max-vertical-offset="1605">
+            <state vertical-scroll-proportion="0.21066667" vertical-offset="667" max-vertical-offset="1440">
               <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
               <folding>
-                <element signature="e#0#4584#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleJWTProcessorTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/SimpleJWTProcessorTest.java">
+      <file leaf-file-name="JWTValidatorTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/JWTValidatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+            <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="690">
               <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding>
-                <element signature="e#0#2184#0" expanded="true" />
+                <element signature="e#0#2160#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,9 +160,9 @@
         <option value="$PROJECT_DIR$/src/test/java/org/wso2/tomcat/authenticator/SimpleJWTProcessorTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/SimpleJWTProcessorTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/JWTAuthenticatorValve.java" />
         <option value="$PROJECT_DIR$/src/test/java/SimpleJWTProcessorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/SimpleJWTProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/JWTAuthenticatorValve.java" />
       </list>
     </option>
   </component>
@@ -184,9 +181,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="41" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1559" />
-    <option name="height" value="876" />
+    <option name="height" value="904" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -213,8 +210,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -329,7 +324,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Authentication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tomcat_8" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -339,21 +348,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Authentication" />
+              <option name="myItemId" value="Tomcat_8" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -361,7 +362,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Authentication" />
+              <option name="myItemId" value="Tomcat_8" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -379,7 +380,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Authentication" />
+              <option name="myItemId" value="Tomcat_8" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -405,7 +406,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Authentication" />
+              <option name="myItemId" value="Tomcat_8" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -431,6 +432,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -443,7 +446,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="LayoutCode.rearrangeEntriesXML" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../carbon/carbon-appmgt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="options.lastSelected" value="editor.preferences.tabs" />
@@ -478,14 +481,14 @@
     </key>
   </component>
   <component name="RunManager" selected="Remote.5005">
-    <configuration default="false" name="SimpleJWTProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="JWTValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="org.wso2.tomcat.authenticator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="org.wso2.tomcat.authenticator.SimpleJWTProcessor" />
+      <option name="MAIN_CLASS_NAME" value="org.wso2.tomcat.authenticator.JWTValidator" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -532,7 +535,7 @@
       <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
-    <configuration default="false" name="SimpleJWTProcessorTest.testIsValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="JWTValidatorTest.testIsValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="org.wso2.tomcat.authenticator.*" />
@@ -543,7 +546,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SimpleJWTProcessorTest" />
+      <option name="MAIN_CLASS_NAME" value="JWTValidatorTest" />
       <option name="METHOD_NAME" value="testIsValid" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -819,14 +822,14 @@
     </configuration>
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Remote.5005" />
-      <item index="1" class="java.lang.String" itemvalue="Application.SimpleJWTProcessor" />
+      <item index="1" class="java.lang.String" itemvalue="Application.JWTValidator" />
       <item index="2" class="java.lang.String" itemvalue="Application.SimpleJWTValidator" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SimpleJWTProcessorTest.testIsValid" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.JWTValidatorTest.testIsValid" />
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SimpleJWTProcessorTest.testIsValid" />
-        <item index="1" class="java.lang.String" itemvalue="Application.SimpleJWTProcessor" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.JWTValidatorTest.testIsValid" />
+        <item index="1" class="java.lang.String" itemvalue="Application.JWTValidator" />
         <item index="2" class="java.lang.String" itemvalue="Application.SimpleJWTValidator" />
       </list>
     </recent_temporary>
@@ -849,11 +852,12 @@
       <workItem from="1455606301991" duration="26198000" />
       <workItem from="1455767703330" duration="1749000" />
       <workItem from="1455769521594" duration="1180000" />
+      <workItem from="1455793578013" duration="62000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95757000" />
+    <option name="totallyTimeSpent" value="95819000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -876,8 +880,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="24" width="1559" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="41" y="-4" width="1559" height="904" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -898,7 +902,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14210178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3207184" sideWeight="0.49907234" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32055518" sideWeight="0.49907234" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.49967927" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -953,7 +957,7 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/SimpleJWTProcessor.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/JWTValidator.java</url>
           <line>50</line>
           <properties />
           <option name="timeStamp" value="59" />
@@ -1305,24 +1309,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/SimpleJWTProcessorTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/JWTValidatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding>
-            <element signature="e#0#2184#0" expanded="true" />
+            <element signature="e#0#2160#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/SimpleJWTProcessor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/JWTValidator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2595">
           <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#5876#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1336,10 +1337,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/authenticator/JWTAuthenticatorValve.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4013158" vertical-offset="0" max-vertical-offset="1605">
+        <state vertical-scroll-proportion="0.21066667" vertical-offset="667" max-vertical-offset="1440">
           <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
           <folding>
-            <element signature="e#0#4584#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
