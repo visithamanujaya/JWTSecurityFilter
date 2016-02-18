@@ -45,7 +45,7 @@ import java.util.logging.Logger;
  * This is the main class in this project. What this class does is it avoid the login pages of secured apps which are
  * running on app manager. To make it application should have J2ee security model for authentication. What this class
  * basically does is decode the JWT token from the request header, read user and user authentication information from
- * it, then it wrap the HttpRequest in a httprequest wrapper which contains decoded user and user roles, then forward
+ * it, then it wrap the HttpRequest in a http request wrapper which contains decoded user and user roles, then forward
  * the request.
  */
 public class JWTSecurityFilter implements Filter {
@@ -57,10 +57,9 @@ public class JWTSecurityFilter implements Filter {
     private static final Logger log = Logger.getLogger((JWTSecurityFilter.class.getName()));
     private JWTSecurityConstraints JWTSecurityConstraints;
     private UserAuthenticator userAuthenticator;
-    protected String trustStorePath =
-            "/home/visitha/WAT/AppManager/wso2appm-1.2.0-SNAPSHOT/repository/resources/security/client-truststore.jks";
-    protected String trustStorePassword = "wso2carbon";
-    protected String alias = "wso2carbon";
+    protected String trustStorePath = "";
+    protected String trustStorePassword = "";
+    protected String alias = "";
     private SimpleJWTProcessor simpleJWTProcessor;
     /**
      * @param filterConfig
@@ -122,7 +121,6 @@ public class JWTSecurityFilter implements Filter {
                         log.log(Level.SEVERE, "Error while creating JASON object from payloadString", e);
                         response.sendError(422, "Invalid JWT Header");
                     }
-
                     String userName = (String) payLoad.get(JWT_TOKEN_SUBJECT);
                     String roles = (String) payLoad.get(JWT_TOKEN_USER_ROLES);
                     List<String> rolesList;
@@ -147,7 +145,7 @@ public class JWTSecurityFilter implements Filter {
                         "JWT Header is not found in the request, considering the request as not authenticated by this" +
                                 " " +
                                 "filter");
-                    response.sendError(403);
+                response.sendError(403);
                 return;
             }
         } else {

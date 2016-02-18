@@ -41,8 +41,8 @@ public class JWTAuthenticatorValve extends ValveBase {
     private static final String JWT_TOKEN_USER_ROLES = "http://wso2.org/claims/role";
     private static final StringManager sm = StringManager.getManager(
             "org.apache.catalina.authenticator");
-    protected String trustStorePath = "";//"/home/visitha/WAT/AppManager/wso2appm-1.2.0-SNAPSHOT/repository/resources/security/client-truststore.jks";
-    protected String trustStorePassword = "wso2carbon";
+    protected String trustStorePath = "";
+    protected String trustStorePassword = "";
     protected String alias = "";
     private SimpleJWTProcessor simpleJWTProcessor = new SimpleJWTProcessor();
 
