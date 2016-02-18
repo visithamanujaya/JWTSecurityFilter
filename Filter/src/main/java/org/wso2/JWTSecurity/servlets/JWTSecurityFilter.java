@@ -18,8 +18,6 @@
 package org.wso2.JWTSecurity.servlets;
 
 import org.wso2.JSON.JSONObject;
-import org.wso2.JSON.parser.JSONParser;
-import org.wso2.JSON.parser.ParseException;
 import org.wso2.JWTSecurity.Exceptions.JWTSecurityException;
 import org.wso2.JWTSecurity.filter.utils.JWTSecurityConstraints;
 import org.wso2.JWTSecurity.filter.utils.JWTSecurityConstraintsReader;
@@ -34,7 +32,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.bind.DatatypeConverter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -60,7 +57,11 @@ public class JWTSecurityFilter implements Filter {
     private static final Logger log = Logger.getLogger((JWTSecurityFilter.class.getName()));
     private JWTSecurityConstraints JWTSecurityConstraints;
     private UserAuthenticator userAuthenticator;
-
+    protected String trustStorePath =
+            "/home/visitha/WAT/AppManager/wso2appm-1.2.0-SNAPSHOT/repository/resources/security/client-truststore.jks";
+    protected String trustStorePassword = "wso2carbon";
+    protected String alias = "wso2carbon";
+    private SimpleJWTProcessor simpleJWTProcessor;
     /**
      * @param filterConfig
      * @throws ServletException This is is the methid which runs once at the start of the program so all the
@@ -69,11 +70,12 @@ public class JWTSecurityFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         try (InputStream inStream = filterConfig.getServletContext().getResourceAsStream(
-                XML_FILE_PATH)) { //TODO Handle null and log why
+                XML_FILE_PATH)) {
             JWTSecurityConstraintsReader JWTSecurityConstraintsReader = new JWTSecurityConstraintsReader();
             JWTSecurityConstraints = JWTSecurityConstraintsReader.getCustomData(inStream);
             List<SecurityConstraint> securityConstraintList = JWTSecurityConstraints.getSecurityConstraint();
             userAuthenticator = new UserAuthenticator(securityConstraintList);
+            simpleJWTProcessor = new SimpleJWTProcessor();
         } catch (IOException e) {
             log.log(Level.OFF, XML_FILE_PATH + " is not found", e);
         } catch (JWTSecurityException e) {
@@ -88,8 +90,8 @@ public class JWTSecurityFilter implements Filter {
      * @throws IOException
      * @throws ServletException Here what this method do is it read the JWT token from the original request. Then it
      *                          decodes the JWT by base64 decoder, Then read the payload part and convert it into a
-     *                          jason object. By that it reads the user and role list. Then it wrap the username and role
-     *                          list in the HTTPRequestWrapper with original reuest and forward it.
+     *                          jason object. By that it reads the user and role list. Then it wrap the username and
+     *                          role list in the HTTPRequestWrapper with original reuest and forward it.
      */
 
     @Override
@@ -97,10 +99,10 @@ public class JWTSecurityFilter implements Filter {
                          FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
-        String jwtHeader = request.getHeader(JWT_TOKEN_NAME);
+        String jwtToken = request.getHeader(JWT_TOKEN_NAME);
 
         //This is to handle null requests if request is not null it will continue,
-        if (jwtHeader == null) {
+        if (jwtToken == null) {
             log.log(Level.WARNING,
                     "JWT Header is not found in the request, considering the request as not authenticated by this " +
                             "filter");
@@ -108,50 +110,67 @@ public class JWTSecurityFilter implements Filter {
             return;
         }
 
-        String[] jwtArray = jwtHeader.split("\\.");
-        if (jwtArray.length != 3) {
-            //Format of the JWT header is invalid so we send un-authorized.
-            response.sendError(403);
-            return;
+        if (simpleJWTProcessor.isValid(jwtToken, trustStorePath, trustStorePassword, alias)) {
+            String[] jwtArray = simpleJWTProcessor.jwtPartitions(jwtToken);
+            if (jwtArray.length != 3) {
+                //Format of the JWT header is invalid so we send un-authorized.
+                response.sendError(403);
+                return;
+            }
+            String payloadString = simpleJWTProcessor.getjwtPayloadDecode(jwtArray);
+
+            JSONObject payLoad = null;
+            try {
+                payLoad = simpleJWTProcessor.jsonObjectConverter(payloadString);
+            } catch (Exception e) {
+                log.log(Level.SEVERE, "Error while creating JASON object from payloadString", e);
+                response.sendError(422, "Invalid JWT Header");
+            }
+            String userName = (String) payLoad.get(JWT_TOKEN_SUBJECT);
+            String roles = (String) payLoad.get(JWT_TOKEN_USER_ROLES);
+            List<String> rolesList;
+            if (roles != null) {
+                rolesList = new ArrayList<String>(Arrays.asList(roles.split(",")));
+            } else {
+                rolesList = Collections.emptyList();
+            }
+
+            UserRoleRequestWrapper userRoleRequestWrapper = new UserRoleRequestWrapper(userName, rolesList, request);
+            String requestedUri = request.getServletPath();
+
+            if (userAuthenticator.isUserAuthenticated(rolesList, requestedUri)) {
+                chain.doFilter(userRoleRequestWrapper, resp);
+            } else {
+                response.sendError(403);
+                return;
+            }
+
         }
-
-        byte[] decodedHeader = DatatypeConverter.parseBase64Binary(jwtArray[0]);
-        byte[] decodedPayload = DatatypeConverter.parseBase64Binary(jwtArray[1]);
-        byte[] decodedSignature = DatatypeConverter.parseBase64Binary(jwtArray[2]);
-        String headerString = new String(decodedHeader);
-        String payloadString = new String(decodedPayload);
-        //TODO validate signature
-        String signatureString = new String(decodedSignature);
-        JSONObject payLoad = null;
-
-        try {
-            payLoad = (JSONObject) new JSONParser().parse(payloadString);
-        } catch (ParseException e) {
-            log.log(Level.SEVERE, "Error while creating JASON object from payloadString", e);
-            response.sendError(422, "Invalid JWT Header");
-        }
-
-        String userName = (String) payLoad.get(JWT_TOKEN_SUBJECT);
-        String roles = (String) payLoad.get(JWT_TOKEN_USER_ROLES);
-        List<String> rolesList;
-        if (roles != null) {
-            rolesList = new ArrayList<String>(Arrays.asList(roles.split(",")));
-        } else {
-            rolesList = Collections.emptyList();
-        }
-
-        UserRoleRequestWrapper userRoleRequestWrapper = new UserRoleRequestWrapper(userName, rolesList, request);
-        String requestedUri = request.getServletPath();
-
-        if (userAuthenticator.isUserAuthenticated(rolesList, requestedUri)) {
-            chain.doFilter(userRoleRequestWrapper, resp);
-        } else {
-            response.sendError(403);
-            return;
-        }
-
     }
 
+    public void setTrustStorePath(String trustStorePath) {
+        this.trustStorePath = trustStorePath;
+    }
+
+    public void setTrustStorePassword(String trustStorePassword) {
+        this.trustStorePassword = trustStorePassword;
+    }
+
+    public String getTrustStorePath() {
+        return trustStorePath;
+    }
+
+    public String getTrustStorePassword() {
+        return trustStorePassword;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
     public void destroy() {
     }
 }

@@ -83,6 +83,18 @@ Define Filter and Filter-Mapping in web.xml and save the file.
 <filter>
     <filter-name>f1</filter-name>
     <filter-class>org.wso2.JWTSecurity.servlets.JWTSecurityFilter</filter-class>
+	<init-param>
+	<param-name>alias</param-name>
+	<param-value>wso2carbon</param-value>
+	</init-param>
+	<init-param>
+	<param-name>trustStorePath</param-name>
+	<param-value>/home/visitha/WAT/AppManager/wso2appm-1.2.0-SNAPSHOT/repository/resources/security/client-truststore.jks</param-value>
+	</init-param>
+	<init-param>
+	<param-name>trustStorePassword</param-name>
+	<param-value>wso2carbon</param-value>
+	</init-param>
 </filter>
   <filter-mapping>
     <filter-name>f1</filter-name>
