@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/ItemList.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/JSONArray.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/JSONAware.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/JSONObject.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/JSONStreamAware.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/JSONValue.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/ContainerFactory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/ContentHandler.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/JSONParser.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/ParseException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/Yylex.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/wso2/tomcat/JSON/parser/Yytoken.java" charset="UTF-8" />
+  </component>
+</project>
