@@ -25,10 +25,11 @@ Copy Realm.jar in to Tomcat lib folder.
 
 Step – 2
 	
-Edit the context.xml in tomcat and add the valve as shown below.
+Edit the context.xml in tomcat and add the valve as shown below. 
+Add a alias to refer the public key in the key store.
 ```
 <Context>
-    <Valve className="org.wso2.tomcat.authenticator.JWTAuthenticatorValve" />
+    <Valve className="org.wso2.tomcat.authenticator.JWTAuthenticatorValve" alias="wso2carbon" />
 </Context>
 ```
 Step – 3

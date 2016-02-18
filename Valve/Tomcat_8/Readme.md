@@ -26,10 +26,10 @@ Copy Realm.jar in to Tomcat lib folder.
 Step – 2
 	
 Edit the context.xml in tomcat and add the valve as shown below. 
-Add a alias to refer the public key in the key store.
+Add an alias to refer the public key in the key store, trust store path to get the key store and trust store password.
 ```
 <Context>
-    <Valve className="org.wso2.tomcat.authenticator.JWTAuthenticatorValve" alias="wso2carbon" />
+    <Valve className="org.wso2.tomcat.authenticator.JWTAuthenticatorValve" alias="wso2carbon"  trustStorePath = "/home/visitha/WAT/AppManager/wso2appm-1.2.0-SNAPSHOT/repository/resources/security/client-truststore.jks" trustStorePassword = "wso2carbon"/>
 </Context>
 ```
 Step – 3

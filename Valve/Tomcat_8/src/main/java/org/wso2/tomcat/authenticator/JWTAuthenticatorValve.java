@@ -41,9 +41,8 @@ public class JWTAuthenticatorValve extends ValveBase {
     private static final String JWT_TOKEN_USER_ROLES = "http://wso2.org/claims/role";
     private static final StringManager sm = StringManager.getManager(
             "org.apache.catalina.authenticator");
-    final String TRUST_STORE_PATH =
-            "/home/visitha/WAT/AppManager/wso2appm-1.2.0-SNAPSHOT/repository/resources/security/client-truststore.jks";
-    final String TRUST_STORE_PASSWORD = "wso2carbon";
+    protected String trustStorePath = "";//"/home/visitha/WAT/AppManager/wso2appm-1.2.0-SNAPSHOT/repository/resources/security/client-truststore.jks";
+    protected String trustStorePassword = "wso2carbon";
     protected String alias = "";
     private SimpleJWTProcessor simpleJWTProcessor = new SimpleJWTProcessor();
 
@@ -59,7 +58,7 @@ public class JWTAuthenticatorValve extends ValveBase {
 
             String jwtToken = request.getHeader(JWT_TOKEN_NAME);
             if (jwtToken != null) {
-                if (simpleJWTProcessor.isValid(jwtToken, TRUST_STORE_PATH, TRUST_STORE_PASSWORD, alias)) {
+                if (simpleJWTProcessor.isValid(jwtToken, trustStorePath, trustStorePassword, alias)) {
                     String payLoad = simpleJWTProcessor.getjwtPayloadDecode(simpleJWTProcessor.jwtPartitions(
                             jwtToken));
                     if (payLoad != null) {
@@ -95,6 +94,20 @@ public class JWTAuthenticatorValve extends ValveBase {
             rolesList = Collections.emptyList();
         }
         return rolesList;
+    }
+
+    public void setTrustStorePath(String trustStorePath){
+        this.trustStorePath = trustStorePath;
+    }
+    public void setTrustStorePassword(String trustStorePassword){
+        this.trustStorePassword = trustStorePassword;
+    }
+    public String getTrustStorePath() {
+        return trustStorePath;
+    }
+
+    public String getTrustStorePassword() {
+        return trustStorePassword;
     }
 
     public String getAlias() {
