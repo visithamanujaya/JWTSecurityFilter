@@ -79,7 +79,7 @@ public class JWTSecurityFilter implements Filter {
         } catch (IOException e) {
             log.log(Level.OFF, XML_FILE_PATH + " is not found", e);
         } catch (JWTSecurityException e) {
-            log.log(Level.WARNING, e.getMessage());
+            log.log(Level.WARNING, e.getMessage(), e);
         }
     }
 
@@ -100,51 +100,58 @@ public class JWTSecurityFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
         String jwtToken = request.getHeader(JWT_TOKEN_NAME);
+        String requestedUri = request.getServletPath();
 
-        //This is to handle null requests if request is not null it will continue,
-        if (jwtToken == null) {
-            log.log(Level.WARNING,
-                    "JWT Header is not found in the request, considering the request as not authenticated by this " +
-                            "filter");
+        if (userAuthenticator.isURISecured(requestedUri)) {
+            if (jwtToken != null && jwtToken != "") {
+
+                if (simpleJWTProcessor.isValid(jwtToken, trustStorePath, trustStorePassword, alias)) {
+                    String[] jwtArray = simpleJWTProcessor.jwtPartitions(jwtToken);
+
+                    if (jwtArray.length != 3) {
+                        //Format of the JWT header is invalid so we send un-authorized.
+                        response.sendError(403);
+                        return;
+                    }
+                    String payloadString = simpleJWTProcessor.getjwtPayloadDecode(jwtArray);
+                    JSONObject payLoad = null;
+
+                    try {
+                        payLoad = simpleJWTProcessor.jsonObjectConverter(payloadString);
+                    } catch (Exception e) {
+                        log.log(Level.SEVERE, "Error while creating JASON object from payloadString", e);
+                        response.sendError(422, "Invalid JWT Header");
+                    }
+
+                    String userName = (String) payLoad.get(JWT_TOKEN_SUBJECT);
+                    String roles = (String) payLoad.get(JWT_TOKEN_USER_ROLES);
+                    List<String> rolesList;
+
+                    if (roles != null) {
+                        rolesList = new ArrayList<String>(Arrays.asList(roles.split(",")));
+                    } else {
+                        rolesList = Collections.emptyList();
+                    }
+
+                    UserRoleRequestWrapper userRoleRequestWrapper = new UserRoleRequestWrapper(userName, rolesList,
+                                                                                               request);
+                    if (userAuthenticator.isUserAuthenticated(rolesList, requestedUri)) {
+                        chain.doFilter(userRoleRequestWrapper, resp);
+                    } else {
+                        response.sendError(403);
+                        return;
+                    }
+                }
+            } else {
+                log.log(Level.WARNING,
+                        "JWT Header is not found in the request, considering the request as not authenticated by this" +
+                                " " +
+                                "filter");
+                    response.sendError(403);
+                return;
+            }
+        } else {
             chain.doFilter(req, resp);
-            return;
-        }
-
-        if (simpleJWTProcessor.isValid(jwtToken, trustStorePath, trustStorePassword, alias)) {
-            String[] jwtArray = simpleJWTProcessor.jwtPartitions(jwtToken);
-            if (jwtArray.length != 3) {
-                //Format of the JWT header is invalid so we send un-authorized.
-                response.sendError(403);
-                return;
-            }
-            String payloadString = simpleJWTProcessor.getjwtPayloadDecode(jwtArray);
-
-            JSONObject payLoad = null;
-            try {
-                payLoad = simpleJWTProcessor.jsonObjectConverter(payloadString);
-            } catch (Exception e) {
-                log.log(Level.SEVERE, "Error while creating JASON object from payloadString", e);
-                response.sendError(422, "Invalid JWT Header");
-            }
-            String userName = (String) payLoad.get(JWT_TOKEN_SUBJECT);
-            String roles = (String) payLoad.get(JWT_TOKEN_USER_ROLES);
-            List<String> rolesList;
-            if (roles != null) {
-                rolesList = new ArrayList<String>(Arrays.asList(roles.split(",")));
-            } else {
-                rolesList = Collections.emptyList();
-            }
-
-            UserRoleRequestWrapper userRoleRequestWrapper = new UserRoleRequestWrapper(userName, rolesList, request);
-            String requestedUri = request.getServletPath();
-
-            if (userAuthenticator.isUserAuthenticated(rolesList, requestedUri)) {
-                chain.doFilter(userRoleRequestWrapper, resp);
-            } else {
-                response.sendError(403);
-                return;
-            }
-
         }
     }
 

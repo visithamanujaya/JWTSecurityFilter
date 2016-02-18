@@ -96,5 +96,14 @@ public class UserAuthenticator {
         }
         return false;
     }
+    public boolean isURISecured(String uri){
+        for (SecurityConstraint securityConstraint : securityConstraintList) {
+            String urlPattern = securityConstraint.getUrlPattern();
+            if (uri.contains(urlPattern)) {
+                return true;
+            }//TODO use regex to match uri patterns
+        }
+        return false;
+    }
 
 }
