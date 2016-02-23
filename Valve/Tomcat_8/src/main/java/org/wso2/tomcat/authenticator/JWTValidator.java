@@ -62,8 +62,6 @@ public class JWTValidator {
         }
 
         KeyStore keyStore = null;
-        String thumbPrint = new String(DatatypeConverter.parseBase64Binary((jsonHeaderObject.get(
-                "x5t").toString())));
         String signatureAlgo = (String) jsonHeaderObject.get("alg");
 
         if ("RS256".equals(signatureAlgo)) {

@@ -20,7 +20,6 @@ package org.wso2.tomcat.authenticator;
 import org.apache.catalina.connector.Request;
 import org.apache.catalina.connector.Response;
 import org.apache.catalina.valves.ValveBase;
-import org.apache.tomcat.util.res.StringManager;
 import org.wso2.tomcat.JSON.JSONObject;
 
 import javax.servlet.ServletException;
@@ -29,6 +28,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Valve takes the request and forward it to the next valve if the principal exist else valve read the JWT token and if
@@ -39,8 +40,7 @@ public class JWTAuthenticatorValve extends ValveBase {
     private static final String JWT_TOKEN_SUBJECT = "sub";
     private static final String JWT_TOKEN_NAME = "x-jwt-assertion";
     private static final String JWT_TOKEN_USER_ROLES = "http://wso2.org/claims/role";
-    private static final StringManager sm = StringManager.getManager(
-            "org.apache.catalina.authenticator");
+    private static final Logger log = Logger.getLogger((JWTAuthenticatorValve.class.getName()));
     protected String trustStorePath = "";
     protected String trustStorePassword = "";
     protected String alias = "";
@@ -53,7 +53,7 @@ public class JWTAuthenticatorValve extends ValveBase {
     public void invoke(Request request, Response response) throws IOException, ServletException {
         if (request.getUserPrincipal() == null) {
             if (this.containerLog.isDebugEnabled()) {
-                this.containerLog.debug(sm.getString("singleSignOn.debug.noPrincipal.checkJWT"));
+                log.log(Level.INFO, "No Principal found in the request, Validate JWT");
             }
 
             String jwtToken = request.getHeader(JWT_TOKEN_NAME);
@@ -72,14 +72,13 @@ public class JWTAuthenticatorValve extends ValveBase {
                 }
             } else {
                 if (this.containerLog.isDebugEnabled()) {
-                    this.containerLog.debug(sm.getString("singleSignOn.debug.JWTHeaderNotFound"));
+                   log.log(Level.SEVERE, "JWT Token not found");
                 }
             }
         } else {
             if (this.containerLog.isDebugEnabled()) {
-                this.containerLog.debug(sm.getString("singleSignOn.debug.hasPrincipal",
-                                                     new Object[]{request.getUserPrincipal()
-                                                             .getName()}));
+                log.log(Level.INFO, "Request has a Principal" + new Object[]{request.getUserPrincipal()
+                        .getName()});
             }
         }
         this.getNext().invoke(request, response);
@@ -96,7 +95,7 @@ public class JWTAuthenticatorValve extends ValveBase {
         return rolesList;
     }
 
-    public void setTrustStorePath(String trustStorePath){
+    public void setTrustStorePath(String trustStorePath) {
         this.trustStorePath = trustStorePath;
     }
     public void setTrustStorePassword(String trustStorePassword){

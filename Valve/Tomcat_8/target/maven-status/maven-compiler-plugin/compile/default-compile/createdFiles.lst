@@ -1,0 +1,15 @@
+org/wso2/tomcat/JSON/JSONAware.class
+org/wso2/tomcat/authenticator/JWTAuthenticatorValve.class
+org/wso2/tomcat/authenticator/JWTGenericPrincipal.class
+org/wso2/tomcat/JSON/JSONValue.class
+org/wso2/tomcat/JSON/parser/Yylex.class
+org/wso2/tomcat/JSON/JSONObject.class
+org/wso2/tomcat/JSON/JSONArray.class
+org/wso2/tomcat/JSON/parser/ContainerFactory.class
+org/wso2/tomcat/JSON/parser/Yytoken.class
+org/wso2/tomcat/authenticator/JWTValidator.class
+org/wso2/tomcat/JSON/ItemList.class
+org/wso2/tomcat/JSON/parser/ContentHandler.class
+org/wso2/tomcat/JSON/JSONStreamAware.class
+org/wso2/tomcat/JSON/parser/JSONParser.class
+org/wso2/tomcat/JSON/parser/ParseException.class
